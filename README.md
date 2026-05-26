@@ -61,15 +61,15 @@ Therefore, the company’s strategies to reduce churn should focus on improving 
 ## Visualization
 
 ### Churn per contract
-![Churn by Contract](Images/Churn per contract.png)
+![Churn by Contract](images/churn_contract.png)
 
 ### Churn per Payment Method
 
-![Churn by Payment Method](Images/Churn by Payment Mehtod.png)
+![Churn by Payment Method](images/churn_payment_method.png)
 
 ### Churn per Tenure Group
 
-![Churn by Tenure Group](Images/Churn by Tenure Group.png)
+![Churn by Tenure Group](images/churn_tenure_group.png)
 
 
 
