@@ -1,83 +1,128 @@
-# Telco Customer Churn
+# 🏠 House Price Prediction with Machine Learning
 
-## ❓ Business Problem
-In this project, we used a dataset from a fictional telecommunications company to analyze customer churn rates. The main question addressed is how the company can develop strategies to reduce customer churn.
+## 📌 Project Overview
 
-To answer this question, several analyses were conducted to identify the profile of customers who cancel their services, considering factors such as age, subscribed services, contract duration, payment method, and other relevant variables.
+This project aims to develop a Machine Learning model capable of predicting house prices based on property characteristics.
 
-## 📊 Dataset 
-This project uses a dataset from a fictional telecommunications company containing 7,043 rows and 21 columns.
+The project includes an exploratory data analysis, data preprocessing, feature engineering, model comparison, and optimization to build a predictive solution.
 
-The dataset includes information about customers who left within the last month, represented by the Churn column.
+A Streamlit application was also developed, allowing users to input house features and receive an estimated price prediction through an interactive interface.
 
-It also contains information about subscribed services, such as phone service, multiple lines, internet service, online security, online backup, device protection, tech support, and streaming TV and movies.
+---
 
-In addition, the dataset provides customer account information, including contract type, payment method, paperless billing, monthly charges, total charges, and customer tenure.
+## 🎯 Project Goals
 
-Demographic information is also included, such as gender, age range, and whether customers have partners or dependents.
+- Perform Exploratory Data Analysis (EDA)
+- Identify patterns and relationships between variables
+- Handle missing values and outliers
+- Apply feature engineering techniques
+- Compare different Machine Learning models
+- Optimize the selected model
+- Build an interactive prediction application
 
-The dataset can be found at:
- https://www.kaggle.com/datasets/blastchar/telco-customer-churn.
+---
 
-Before the analysis, data cleaning and preprocessing procedures were performed.
+## 📊 Dataset
 
-## 🛠️ Methodologies and Tools
-After cleaning the data, the analysis initially focused on individual variables.
+The dataset contains information about residential properties and their characteristics.
 
-First, the overall churn rate was analyzed and proved to be concerning. Then, the individual impact of several variables on churn was studied, including payment method, contract type, subscribed services, and customer age.
+Some of the main features include:
 
-Afterward, a multivariate analysis was performed to evaluate the combined influence of payment method and contract type. This analysis helped identify the customer segment with the highest churn risk: customers with month-to-month contracts and non-automatic payment methods.
+- Living area
+- Number of bedrooms
+- Number of bathrooms
+- Overall quality
+- Year built
+- Garage area
+- Neighborhood
+- House price
 
-The next step of the analysis involved creating new variables to better understand customer behavior. Two new columns were added to the dataset:
+The target variable is: SalePrice
 
-- TotalServices, which calculates the total number of subscribed services.
+## 🔎 Exploratory Data Analysis
 
-- TenureGroup, which categorizes customers according to contract duration ranges, such as 0–1 year, 2–3 years, and so on.
+During the analysis, the following aspects were investigated:
 
-## ⚙️ Technologies Used
+- Distribution of house prices
+- Correlation between numerical variables
+- Relationship between features and prices
+- Missing values
+- Outliers
 
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- Jupyter Notebook
+A logarithmic transformation was applied to the target variable to reduce skewness:
 
-## Main Insights and Results
-The analysis generated several important insights.
+```python
+log(SalePrice)
+```
+## ⚙️ Data Preprocessing
+The following preprocessing steps were performed:
 
-Customers with month-to-month contracts showed the highest churn rate, around 42%, while long-term contracts significantly reduced churn rates, especially two-year contracts, which presented a churn rate of approximately 3%.
+* Missing value treatment
+* Categorical variable encoding
+* Feature transformation
+* Train/test split
+* Target variable transformation
+* Data scaling when necessary
 
-Payment method also proved to be a strong indicator of churn behavior. Customers using electronic check had a considerably higher churn rate, around 45%, compared to customers using automatic payment methods such as credit cards or bank transfers, whose churn rates ranged between 15% and 17%.
+## 🤖 Machine Learning Models
+Several models were tested and compared:
 
-Furthermore, the combination of month-to-month contracts and electronic check payments represented the customer segment with the highest risk of churn, with cancellation rates exceeding 50%.
+* Linear Regression
+* Ridge Regression
+* Lasso Regression
+* Elastic Net
+* XGBoost
 
-Another important finding was that customers in their first year of service had a significantly higher churn rate, reaching 47.7%. This rate steadily decreased as customer tenure increased. Customers with more than four years of tenure demonstrated strong retention, with churn rates of only 9.5%.
+The models were evaluated using cross-validation and the RMSE metric.
 
-Based on these results, it can be concluded that newer customers are more likely to cancel their plans. Their initial experience may be negatively affected by the lack of automated payment methods and the inconvenience of manual monthly payments, factors that can generate dissatisfaction and eventually lead to churn.
+The final selected model was:
 
-Therefore, the company’s strategies to reduce churn should focus on improving the onboarding process and enhancing the early experience of new customers, especially during their first months using the service.
+## 🏆 Lasso Regression
 
-## Visualization
+Lasso was chosen due to its balance between:
 
-### Churn per contract
-![Churn by Contract](images/churn_contract.png)
+Prediction performance
+Model simplicity
+Generalization ability
 
-### Churn per Payment Method
-
-![Churn by Payment Method](images/churn_payment_method.png)
-
-### Churn per Tenure Group
-
-![Churn by Tenure Group](images/churn_tenure_group.png)
+## 📈 Model Evaluation
+The evaluation metric used was RMSE.Lower RMSE values indicate better prediction accuracy.
 
 
+## 🖥️ Application
 
-## 📌 Conclusion
+A web application was created using Streamlit.
 
-The analysis showed that customer churn is strongly associated with short-term contracts and non-automatic payment methods. In addition, newer customers presented significantly higher churn rates, indicating that the first months of service are a critical period for customer retention. Improving the onboarding experience, simplifying payment processes, and encouraging long-term contracts could significantly reduce churn rates.
+Users can enter house characteristics and receive a predicted price.
 
-## Contact 
-Renan Sampaio   
 
-[LinkedIn](https://www.linkedin.com/in/renan-barreto-sampaio-a612771bb)
+## 🛠️ Technologies Used
+* Python
+* Pandas
+* NumPy
+* Matplotlib
+* Seaborn
+* Scikit-Learn
+* XGBoost
+* Streamlit
+* Joblib
+
+## ▶️ How to Run the Project
+Clone the repository:
+``` bash
+git clone https://github.com/your_username/house-prediction.git
+```
+Install dependencies:
+``` bash
+pip install -r requirements.txt
+```
+Run the Streamlit application:
+``` bash
+streamlit run app/app.py
+``` 
+
+## 👤 Author
+
+Renan Sampaio
+
+Machine Learning project developed to apply Data Analysis and predictive modeling techniques.
